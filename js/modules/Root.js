@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {Router, Route, browserHistory} from 'react-router';
 
-import {SimplActions} from 'simpl/lib/actions';
-import {simpl} from 'simpl/lib/decorators/simpl';
+import {SimplActions} from 'simpl-react/lib/actions';
+import {simpl} from 'simpl-react/lib/decorators/simpl';
 
 import Progress from '../components/Progress';
 
@@ -38,7 +38,7 @@ const RootContainer = connect(
   null
 )(Root);
 
-const runs = RUNS.map((id) => `model:model.run.${id}`);;
+const runs = RUNS.map((id) => `model:model.run.${id}`);
 const runusers = RUNUSERS.map((id) => `model:model.runuser.${id}`);
 const worlds = WORLDS.map((id) => `model:model.world.${id}`);
 const topics = (LEADER) ? runs : runusers.concat(worlds);
