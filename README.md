@@ -31,7 +31,7 @@ Update node_modules and run Gulp to compile JS
 ```shell
 $ cd to simpl-calc-ui directory
 $ npm install
-$ start
+$ npm start
 ```
 
 ## Run javascript unit tests (run outside Vagrant)
@@ -57,3 +57,4 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
+
