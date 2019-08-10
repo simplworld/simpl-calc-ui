@@ -6,10 +6,3 @@ djangorestframework==3.9.4
 # Simpl Modules
 simpl-client==0.7.5
 
-django-webpack-loader==0.6.0
-
-gunicorn==19.8.1
-envparse==0.2.0
-
-# Dev requirements
-autobahn==0.16.1
