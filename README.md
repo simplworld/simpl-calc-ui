@@ -17,13 +17,14 @@ $ ./manage.py migrate
 $ ./manage.py runserver 0.0.0.0:8000
 ```
 
-If you need some serious debugging help, in {{cookiecutter.app_slug}}/templates/{{cookiecutter.app_slug}}/home.html set:
+If you need some serious debugging help, in frontend/templates/frontend/home.html set:
 
 ```js
 var AUTOBAHN_DEBUG = true;
 ```
 
-Which will turn on verbose debugging of the Autobahn/Websockets to help debug interactions between the browser and model service backend.
+Which will turn on verbose debugging of the Autobahn/Websockets to help debug interactions between the browser 
+and model service backend.
 If you do this, do NOT commit this change.
 
 Update node_modules and run Gulp to compile JS
