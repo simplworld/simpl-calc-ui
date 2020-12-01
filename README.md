@@ -2,15 +2,40 @@
 
 ## Python Setup (assumes Python >= 3.6, simpl-games-api and simpl-calc-model servers running)
 
+
+## Install simpl-calc-ui
+
 ```shell
 $ git clone git@github.com:simplworld/simpl-calc-ui.git
 $ cd simpl-calc-ui
+```
+
+## Local Docker Setup
+
+The `simpl-games-api` and `simpl-calc-model` containers need to be running before starting `simpl-calc-ui`.
+
+You also need to have a `is_staff=True` user in the simpl-games-api database that
+corresponds to the `SIMPL_GAMES_AUTH` setting used here.
+
+After you clone the repo, run:
+
+```bash
+$ docker-compose up
+```
+
+this will create the Docker image and run it. 
+
+## Local Setup Without Docker
+
+## Install Python dependencies and create a SQLite database
+
+```
 $ mkvirtualenv simpl-calc-ui
 $ add2virtualenv .
-
 $ pip install -r requirements.txt
 $ ./manage.py migrate
 ```
+
 ## Run front end
 
 ```shell
