@@ -12,12 +12,13 @@
       var AUTOBAHN_DEBUG = false;
       var MODEL_SERVICE = '{{ MODELSERVICE_WS }}';
       var ROOT_TOPIC = '{{ ROOT_TOPIC }}';
-      var AUTHID = '{{ user.simpl_id }}';
+      var AUTHID = '{{ user.email }}';
       var LEADER = {% if LEADER %}true{% else %}false{% endif %};
       var RUNS = [{{ RUNS|join:","}}];
       var WORLDS = [{{ WORLDS|join:","}}];
       var RUNUSERS = [{{ RUNUSERS|join:","}}];
       var LOAD_DATE = new Date();
+      var HMAC = '{{ HMAC }}';
       console.log("AUTHID: ", AUTHID);
       console.log("LEADER: ", LEADER);
       console.log("WORLDS: ", WORLDS);
