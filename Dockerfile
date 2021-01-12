@@ -29,8 +29,6 @@ RUN npm install
 
 ADD . /code/
 
-#RUN NODE_ENV=production npm run compile
-
 ENV PYTHONPATH /code:$PYTHONPATH
 ENV MODEL_SERVICE_WS ws://localhost:8080/ws
 
