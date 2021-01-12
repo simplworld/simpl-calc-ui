@@ -6,7 +6,7 @@
 ## Install simpl-calc-ui
 
 ```shell
-$ git clone git@github.com:simplworld/simpl-calc-ui.git
+$ git clone https://github.com/simplworld/simpl-calc-ui.git
 $ cd simpl-calc-ui
 ```
 
