@@ -27,16 +27,15 @@ this will create the Docker image and run it.
 
 ## Local Setup Without Docker
 
-## Install Python dependencies and create a SQLite database
+### Install Python dependencies and create a SQLite database
 
 ```
 $ mkvirtualenv simpl-calc-ui
-$ add2virtualenv .
 $ pip install -r requirements.txt
 $ ./manage.py migrate
 ```
 
-## Run front end
+### Run front end
 
 ```shell
 $ ./manage.py runserver 0.0.0.0:8000
@@ -52,7 +51,7 @@ Which will turn on verbose debugging of the Autobahn/Websockets to help debug in
 and model service backend.
 If you do this, do NOT commit this change.
 
-Update node_modules and run Gulp to compile JS
+In a separate terminal, update node_modules and run Gulp to compile JS
 
 ```shell
 $ cd to simpl-calc-ui directory
@@ -60,7 +59,7 @@ $ npm install
 $ npm start
 ```
 
-## Run javascript unit tests (run outside Vagrant)
+## Run javascript unit tests
 
 We use jest and enzyme for unit testing (see http://redux.js.org/docs/recipes/WritingTests.html)
 
