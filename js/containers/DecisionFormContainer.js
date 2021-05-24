@@ -21,6 +21,14 @@ function mapDispatchToProps(dispatch, ownProps) {
       // submit player's decision
       const operand = values.operand;
       dispatch(submitDecision(ownProps.currentPeriod, operand))
+        .then((result) => {
+          const status = result.payload;
+          if (status !== 'ok') {
+            console.log("DecisionFormContainer.submitDecision failed due to: ", status);
+          } else {
+            console.log("DecisionFormContainer.submitDecision succeeded");
+          }
+        });
     }
   };
 }
