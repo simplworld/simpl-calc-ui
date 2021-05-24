@@ -34,7 +34,6 @@ $ docker-compose run --rm ui bash
 
 Once you are in the container shell, run:
 ```shell
-$ pip install -r requirements.txt
 $ rm db.sqlite3
 $ ./manage.py migrate
 ```
