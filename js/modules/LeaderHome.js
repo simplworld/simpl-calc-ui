@@ -3,35 +3,31 @@ import PropTypes from 'prop-types';
 
 import {connect} from 'react-redux';
 
-import RunRowContainer from '../containers/RunRowContainer';
-import {SimplActions} from "simpl-react/lib/actions";
+import PlayerResultRowContainer from '../containers/PlayerResultRowContainer'
 
 class LeaderHome extends React.Component {
 
-  componentDidMount() {
-    // unload any loaded worlds
-    this.props.unloadRunDataAction();
-  }
-
   render() {
     const name = this.props.runuser.first_name + ' ' + this.props.runuser.last_name;
-    const runRows = this.props.runs.map(
-      (r) => <RunRowContainer key={r.id} run={r}/>
+    const playerRows = this.props.players.map(
+      (p) => <PlayerResultRowContainer key={p.id} runuser={p}/>
     );
     return (
       <div>
         <div>
-          <h1>{name} Run Dashboard</h1>
+          <h1>Hello {name}</h1>
         </div>
         <div>
           <table>
             <thead>
             <tr>
-              <th width="60%">Run</th>
+              <th width="30%"> Player</th>
+              <th width="30%"> Periods Played</th>
+              <th width="30%"> Total</th>
             </tr>
             </thead>
             <tbody>
-            {runRows}
+            {playerRows}
             </tbody>
           </table>
         </div>
@@ -44,30 +40,26 @@ class LeaderHome extends React.Component {
 
 LeaderHome.propTypes = {
   runuser: PropTypes.object.isRequired,
-  runs: PropTypes.array,
-
-  unloadRunDataAction: PropTypes.func.isRequired,
+  players: PropTypes.array.isRequired
 };
 
 function mapStateToProps(state) {
+  const runuser = state.simpl.current_runuser;
+
+  const unsortedPlayers = state.simpl.runuser.filter(
+    (ru) => runuser.id !== ru.id
+  );
+  const players = _.sortBy(unsortedPlayers, (p) => p.email);
+
   return {
-    runuser: state.simpl.current_runuser,
-    runs: state.simpl.run,
+    runuser,
+    players
   };
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    unloadRunDataAction() {
-      // console.log(`mapDispatchToProps.unloadRunDataAction:`);
-      dispatch(SimplActions.unloadRunData());
-    }
-  }
-};
-
 const module = connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(LeaderHome);
 
 export default module;

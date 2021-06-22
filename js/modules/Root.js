@@ -9,7 +9,6 @@ import { simpl } from 'simpl-react/lib/decorators/simpl';
 
 import Progress from '../components/Progress';
 
-import LeaderRun from './LeaderRun';
 import LeaderHome from './LeaderHome';
 import PlayerHome from './PlayerHome';
 
@@ -25,7 +24,6 @@ class Root extends React.Component {
       <Router history={browserHistory}>
         {/* player or leader home page route */}
         <Route path="/" component={Home} />
-        <Route path="/run/:id" component={LeaderRun} />
       </Router>
     );
   }
@@ -53,6 +51,5 @@ export default simpl({
   progressComponent: Progress,
   root_topic: ROOT_TOPIC,
   topics: () => topics,
-  loadAllScenarios: LEADER,
-  loadRunDataOnDemand: LEADER,
+  loadAllScenarios: LEADER
 })(RootContainer);
