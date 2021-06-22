@@ -21,7 +21,7 @@
     "redux-create-reducer": "^1.1.3",
     "redux-form": "^8.3.6",
     "redux-recycle": "^1.2.0",
-    "simpl-react": "github:simplworld/simpl-react#auth-fix",
+    "simpl-react": "github:simplworld/simpl-react#v1.0.0-rc",
     "validator": "^6.1.0",
     "webpack": "^3.11.0",
     "webpack-bundle-tracker": "^0.4.3",
