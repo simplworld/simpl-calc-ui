@@ -2,8 +2,6 @@ FROM gladiatr72/just-tini:latest as tini
 
 FROM revolutionsystems/python:3.6.9-wee-optimized-lto
 
-LABEL Description="Image for simpl-calc-ui" Vendor="Wharton" Version="0.1.0"
-
 ENV PYTHONUNBUFFERED 1
 
 RUN mkdir /code
@@ -29,10 +27,10 @@ RUN npm install
 
 ADD . /code/
 
-#RUN NODE_ENV=production npm run start
-
 ENV PYTHONPATH /code:$PYTHONPATH
 ENV MODEL_SERVICE_WS ws://localhost:8080/ws
 
 EXPOSE 8000
 CMD /code/bootstrap.sh
+
+LABEL Description="Image for simpl-calc-ui" Vendor="Simpl" Version="1.0.0"
